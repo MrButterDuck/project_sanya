@@ -1,0 +1,109 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}{{recipe.title}}{% endblock %}
+
+{% block content %}
+<div class = "main_men">
+    
+    <div class="product">
+        <h3>{{recipe.title}}</h3>
+        <img src="{{recipe.img_url}}" class="main_img">
+        <table>
+            <tr>
+                <th>Продукты</th>
+                <th>Вес</th>
+                <th>Ккал</th>
+                <th>Б</th>
+                <th>Ж</th>
+                <th>У</th>
+            </tr>
+            {% for prod in products%}
+                <tr>
+                    <td>{{prod.product.product_name}}</td>
+                    <td>{{prod.weight}}</td>
+                    <td>{{prod.product.kkal}}</td>
+                    <td>{{prod.product.proteins}}</td>
+                    <td>{{prod.product.fats}}</td>
+                    <td>{{prod.product.carbohydrates}}</td>
+                </tr>
+            {%endfor%}
+        </table>
+
+        <table class="itogi">
+
+            <tr>
+                <th>На 1 порцию</th>
+                <th>{{all_weight}}</th>
+                <th>{{kkal}}</th>
+                <th>{{prot}}</th>
+                <th>{{fat}}</th>
+                <th>{{carb}}</th>
+            </tr>
+
+            <tr>
+                <th>На 100 грамм</th>
+                <th></th>
+                <th>{{kkal100}}</th>
+                <th>{{prot100}}</th>
+                <th>{{fat100}}</th>
+                <th>{{carb100}}</th>
+            </tr>
+
+                <tr>
+                <th>БЖУ</th>
+                <th></th>
+                <th></th>
+                <th>{{prot_}}%</th>
+                <th>{{fat_}}%</th>
+                <th>{{carb_}}%</th>
+            </tr>
+
+        </table>    
+
+    </div>
+
+    <div class="item_parametrs">
+        <div class="time"><img src = "{% static "img/hourglass.png" %}">
+            <p>{{recipe.cooking_time}} Мин.</p>
+        </div>
+        <div class="cals"><img src = "{% static "img/low-battery.png" %}">
+            <p>{{kkal100}} ккал/100г </p>
+            <table>
+                <tr>
+                    <td>Белки</td>
+                    <td>Жиры</td>
+                    <td>Углеводы</td>
+                </tr>
+                <tr>
+                    <td>{{prot100}} г</td>
+                    <td>{{fat100}} г</td>
+                    <td>{{carb100}} г</td>
+                </tr>
+                <tr>
+                    <td>{{prot_}}%</td>
+                    <td>{{fat_}}%</td>
+                    <td>{{carb_}}%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="neobh">
+            <img src = "{% static "img/grocery-cart.png" %}">
+            <span>Потребуется:</span></br>
+            <p>
+                {% for prod in products%}
+                {{prod.product.product_name}},
+                {%endfor%}
+            </p>
+        </div>
+
+        <div class= "process">
+            <img src="{% static "img/cooking.png" %}"><span>Приготовение</span></br>
+            <p>{{recipe.cooking_path}}</p>
+
+        </div>
+
+        </div>
+
+</div>
+{% endblock %}
+

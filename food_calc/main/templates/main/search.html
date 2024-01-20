@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+<div class="choice">
+<form class="form1" method="post">
+    {% csrf_token %}
+    <div>
+    <h3>Пол</h3>
+        {{form.sex}}
+    </div>  
+    <div class="AHW">
+        <div>Возраст</div>
+        <div>Рост</div>
+        <div>Вес</div>
+        <div>{{form.age}}</div>
+        <div>{{form.height}}</div>
+        <div>{{form.weight}}</div>
+    </div>
+    <div>
+        <h3>Физическая активность</h3>
+        {{form.activity}}
+    </div>
+    <div>
+    <button type="submit" class="btn1">Подобрать рецепты</button>
+    </div>
+</form>
+{{error}}
+</div>
+{% endblock %}

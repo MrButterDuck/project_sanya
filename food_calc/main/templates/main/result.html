@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+<p class="result_blud">{{title}}</p>
+<div class = "main_men">
+    {% if recipes%}
+        {% for rec in recipes%}
+            <div class="bludo">
+                <img src="{{rec.img}}" class="blud_img"><p><span>{{rec.title}}</span></br>
+                <img src="{% static "img/hourglass.png" %}" width="14px">{{rec.time}} мин. <img src="{% static "img/low-battery.png" %}" width="14px">{{rec.kkal}}Ккал/100г. Б-{{rec.proteing}}г, У-{{rec.carb}}г, Ж-{{rec.fat}}г</br>Потребуется: {{rec.products}}</p>
+            </div>
+            <div class="add_bludo"><a href="{% url 'article' rec.id %}"><img src="{% static "img/add.png" %}" width="32px" class="mini_bl">Подробно</a></div>
+        {% endfor%}
+    {% else %}
+        <p class="result_blud">Записи не найдены</p>
+    {% endif %}
+    
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Страница рецептов{% endblock %}
+
+{% block content %}
+<div class="receipts">
+    <div class="filters">
+        <h1>Какие блюда вы хотите?</h1>
+        <h3>Отметьте нужные пункты и нажмите кнопку</h3> 
+        <form>
+            <input type="button" value="Применить фильтры" class="btn2">
+            <input type="reset" value="Сбросить фильтр" class="btn2">
+        <details>
+            <summary>Тип блюда</summary>
+            <p>
+                <label><input type="checkbox" name="dishes" value="asian">Салаты, закуски</label><br>
+                <label><input type="checkbox" name="dishes" value="german">Первые блюда</label><br>
+                <label><input type="checkbox" name="dishes" value="british">Вторые блюда</label><br>
+                <label><input type="checkbox" name="dishes" value="sauces">Соусы, приправы</label><br>
+                <label><input type="checkbox" name="dishes" value="dessert">Десерты, выпечка</label><br>
+                <label><input type="checkbox" name="dishes" value="drinks">Напитки</label><br>
+                <label><input type="checkbox" name="dishes" value="preserves">Консервированное</label><br>
+            </p>
+        </details>
+        <details>
+            <summary>Кухня</summary>
+            <p>
+                <label><input type="checkbox" name="cuisine" value="asian">Азиатская</label><br>
+                <label><input type="checkbox" name="cuisine" value="german">Немецкая</label><br>
+                <label><input type="checkbox" name="cuisine" value="british">Английская</label><br>
+                <label><input type="checkbox" name="cuisine" value="russian">Русская</label><br>
+            </p>
+        </details>
+        <details>
+            <summary>Приготовление</summary>
+            <p>
+                <label><input type="checkbox" name="cookingtype" value="fried">Жареное</label><br>
+                <label><input type="checkbox" name="cookingtype" value="boiled">Варёное</label><br>
+                <label><input type="checkbox" name="cookingtype" value="baked">Печёное</label><br>
+                <label><input type="checkbox" name="cookingtype" value="smoked">Копчёное</label><br>
+                <label><input type="checkbox" name="cookingtype" value="grilled">Гриль</label><br>
+            </p>
+        </details>
+        <details>
+            <summary>Рецепты из кино, книг, от знаменитостей</summary>
+            <p>
+                <label>Введите название/фамилию: <input type="text" class="input2 biginput"></label><br>
+            </p>
+        </details>
+            <p>
+                <label>Коридор калорийности: от <input type="text" class="input2"> до <input type="text" class="input2"></label><br>
+            </p>
+        </form>
+    </div>
+    <div class="result">
+        <div>
+        <h1>Рецепты с указанием калорий и БЖУ</h1>
+        <form>
+            <button class="btn3" type="submit">Добавить свой рецепт</button>
+            Сортировать по:
+            <select>
+                <option>Количеству калорий</option>
+                <option>Цене</option>
+                <option>Видам кухни</option>
+            </select>
+            На странице:
+            <select>
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+                <option>20</option>
+                <option>25</option>
+            </select>
+        </form>
+        </div>
+        <div class="articles">
+            <div>Блюдо1</div>
+            <div>Блюдо2</div>
+            <div>Блюдо3</div>
+            <div>Блюдо4</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

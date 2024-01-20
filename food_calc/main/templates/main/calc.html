@@ -1,0 +1,91 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Калькулятор{% endblock %}
+
+{% block content %}
+<div class="stats">
+    <div>
+    Сводка
+    </div>
+    <div>
+    Съедено(ккал)
+    </div>
+    <div>
+    Осталось    
+    </div> 
+    <div>
+    Белки
+    </div>
+    <div>
+    Жиры
+    </div>
+    <div>
+    Углеводы
+    </div>
+</div>
+<div class="choice">
+<form class="form1">
+    <div>
+    <h3>Пол</h3>
+        <label><input type="radio" name="sex" value="woman">Женский</label>
+        <label><input type="radio" name="sex" value="man">Мужской</label> 
+    </div>  
+    <div class="AHW">
+        <div>Возраст</div>
+        <div>Рост</div>
+        <div>Вес</div>
+        <div><input class="input1" type="text" placeholder="Ваш возраст"></div>
+        <div><input class="input1" type="text" placeholder="Ваш рост"></div>
+        <div><input class="input1" type="text" placeholder="Ваш вес"></div>
+    </div>
+    <div>
+        <h3>Физическая активность</h3>
+    <div>
+        <div>
+            <label><input type="radio" name="phys" value="min">Минимальная</label>
+        </div>
+        <div class="smooth">
+            Сидячая работа и нет физических нагрузок
+        </div>
+    </div>
+    <div>
+        <div>
+            <label><input type="radio" name="phys" value="low">Низкая</label>
+        </div>
+        <div class="smooth">
+            Редкие, нерегулярные тренировки, активность в быту
+        </div>
+    </div>
+    <div>
+        <div>
+            <label><input type="radio" name="phys" value="average">Средняя</label>
+        </div>
+        <div class="smooth">
+            Тренировки 3-5 раз в неделю
+        </div>
+    </div>
+    <div>
+        <div>
+            <label><input type="radio" name="phys" value="high">Высокая</label>
+        </div>
+        <div class="smooth">
+            Тренировки 6-7 раз в неделю
+        </div>
+    </div>
+    <div>
+        <div>
+            <label><input type="radio" name="phys" value="max">Очень высокая</label>
+        </div>
+        <div class="smooth">
+            Больше 6 тренировок в неделю и физическая работа
+        </div>
+    </div>
+    </div>
+
+    <div>
+    <input type="button" value="Рассчитать" class="btn1">
+    <input type="reset" value="Очистить поля" class="btn1">
+    </div>
+</form>
+</div>
+{% endblock %}
